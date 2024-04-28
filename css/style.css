@@ -1,0 +1,442 @@
+/*
+ @include u.breakpoints-number(600px){
+        background-color: red;
+    }
+*/
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 14px;
+}
+body .desk {
+  display: none;
+}
+@media (min-width: 800px) {
+  body .mobile {
+    display: none;
+  }
+  body .desk {
+    display: block;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+main,
+header,
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  background-color: var(--intro-and-email);
+}
+
+main {
+  background-color: var(--main-bg);
+}
+
+footer {
+  background-color: var(--footer-bg);
+}
+
+.container {
+  width: 90%;
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+@media (min-width: 800px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.logo {
+  width: 100px;
+}
+
+.general-btn {
+  font-family: var(--text-1-400-700);
+  font-weight: 700;
+  padding-block: 0.8rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 30px;
+}
+
+.getStarte-btn {
+  color: var(--white);
+  background: linear-gradient(to right, var(--gradient));
+  cursor: pointer;
+}
+
+.general-btn:hover {
+  opacity: 0.8;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  font-family: var(--text-1-400-700);
+  color: var(--white);
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+p, a {
+  margin-top: 0;
+  font-family: var(--text-2-400-700);
+  color: var(--white);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+:root {
+  --intro-and-email:hsl(217, 28%, 15%);
+  --main-bg: hsl(218, 28%, 13%);
+  --footer-bg:hsl(216, 53%, 9%);
+  --testimonial-bg:hsl(219, 30%, 18%);
+  --gradient: hsl(176, 68%, 64%), hsl(198, 60%, 50%);
+  --error: hsl(0, 100%, 63%);
+  --white:hsl(0, 0%, 100%);
+  --text-1-400-700: "Raleway", sans-serif;
+  --text-2-400-700: "Open Sans", sans-serif;
+}
+
+/*
+  @include u.breakpoints(medium){
+
+
+    }
+
+*/
+main .title, main .beneficts {
+  text-align: center;
+  margin-inline: auto;
+}
+main .title {
+  margin-top: -5rem;
+  margin-bottom: 5rem;
+  max-width: 450px;
+}
+main .title button {
+  width: 12.5rem;
+}
+main .beneficts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 400px;
+}
+main .beneficts img {
+  width: auto;
+  margin-bottom: 1rem;
+  height: 4.375rem;
+}
+main .productive {
+  margin-block: 6rem;
+}
+main .productive img {
+  margin-bottom: 2.5rem;
+}
+main .productive a {
+  display: flex;
+  align-items: end;
+  width: max-content;
+  gap: 3px;
+  font-size: 0.7rem;
+  color: hsl(176, 68%, 64%);
+  position: relative;
+  cursor: pointer;
+}
+main .productive a:hover {
+  color: var(--white);
+}
+main .productive a:hover svg use {
+  fill: var(--white);
+}
+main .productive a::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 120%;
+  background-color: hsl(176, 68%, 64%);
+}
+main .productive a:hover::after {
+  background-color: var(--white);
+}
+main .comentary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto;
+  position: relative;
+}
+main .comentary .quote {
+  position: absolute;
+  top: -0.9375rem;
+  width: 1.25rem;
+  left: 0;
+}
+main .comentary > div {
+  position: relative;
+  z-index: 3;
+  background-color: var(--testimonial-bg);
+  border-radius: 0.3125rem;
+  padding: 1.5rem;
+}
+main .comentary > div h2 {
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+main .comentary > div .comentary__flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.625rem;
+  margin-top: 1rem;
+}
+main .comentary > div .comentary__flex p {
+  margin: 0;
+  font-size: 0.7rem;
+}
+main .comentary > div .comentary__flex img {
+  width: 45px;
+  border-radius: 100%;
+}
+main .comentary > div .comentary__flex p:first-child {
+  font-size: 1rem;
+  margin-bottom: 0.3125rem;
+}
+main .comentary > div .comentary__flex p:last-child {
+  opacity: 0.8;
+}
+main .early {
+  background-color: var(--intro-and-email);
+  padding: 2rem;
+  position: relative;
+  bottom: -7rem;
+  z-index: 66;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px black;
+  text-align: center;
+}
+main .early input, main .early button {
+  width: 100%;
+  cursor: pointer;
+}
+main .early input {
+  padding-left: 2rem;
+}
+@media (min-width: 800px) {
+  main .title {
+    margin-top: -25vw;
+  }
+  main .beneficts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 790px;
+  }
+  main .productive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 1050px;
+    margin-inline: auto;
+  }
+  main .productive div {
+    width: 45%;
+  }
+  main .productive div h2 {
+    font-size: 2rem;
+  }
+  main .productive > img {
+    width: 50%;
+  }
+  main .comentary {
+    flex-direction: row;
+    max-width: 1050px;
+  }
+  main .early {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+  main .early form {
+    display: flex;
+    justify-content: space-between;
+  }
+  main .early form input {
+    width: 70%;
+  }
+  main .early form button {
+    width: 28%;
+  }
+}
+
+header {
+  position: relative;
+  padding-top: 2rem;
+}
+header .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+header .flex ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+header .flex ul a {
+  color: var(--white);
+  font-size: 1rem;
+}
+header .flex ul a:hover {
+  text-decoration: underline;
+}
+header .intro-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header .intro-div .intro {
+  margin-bottom: 8rem;
+  max-width: 500px;
+}
+@media (min-width: 800px) {
+  header .intro-div {
+    margin-bottom: 20vw;
+  }
+}
+header .curve {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: calc(6.5rem + 10vw);
+}
+header .curve-desk {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+footer {
+  padding-top: 10rem;
+  padding-bottom: 2rem;
+}
+footer .footer-flex {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+footer .footer-flex .info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+footer .footer-flex .info img {
+  width: auto;
+  margin-top: 0.2rem;
+}
+footer .footer-flex nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+footer .footer-flex nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+footer .footer-flex nav ul a:hover {
+  text-decoration: underline;
+}
+footer .footer-flex .media {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+footer .footer-flex .media div {
+  width: 28px;
+  height: 28px;
+  color: var(--white);
+  border-radius: 100%;
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+footer .footer-flex .media div:hover {
+  border: 1px solid hsl(198, 60%, 50%);
+}
+footer .footer-flex .media div:hover i {
+  color: hsl(198, 60%, 50%);
+}
+@media (min-width: 800px) {
+  footer .footer-flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  footer .footer-flex .grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 3.125rem;
+    max-width: 530px;
+  }
+  footer .footer-flex nav {
+    display: flex;
+    flex-direction: row;
+    gap: 3.125rem;
+  }
+  footer .footer-flex nav ul {
+    margin-top: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

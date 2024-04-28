@@ -1,0 +1,60 @@
+@use '../util' as u;
+header{
+    position: relative;
+    padding-top: 2rem;
+
+
+    & .flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+
+        & ul{
+            display: flex;
+            justify-content: space-between;
+            gap: u.rem(20);
+
+            & a{
+                color: var(--white);
+                font-size: 1rem;
+            }
+
+            & a:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    & .intro-div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .intro{
+            margin-bottom: 8rem;
+            max-width: 500px;   
+        }
+
+        @include u.breakpoints-number(800px){
+            margin-bottom: 20vw;
+        }
+    }
+    
+    .curve{
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        height: calc(6.5rem + 10vw);
+
+    }
+
+    .curve-desk{
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        
+    }
+}
+

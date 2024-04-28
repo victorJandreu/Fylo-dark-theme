@@ -1,0 +1,39 @@
+@use'../util' as u;
+
+//  font-size: clamp(u.rem(28), u.rem(16) + 3vw, u.rem(40));
+
+h1,
+h2,
+h3{
+    margin-top: 0;
+    font-family: var(--text-1-400-700);
+    color: var(--white);
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+h2{
+    font-size: 1.1rem;
+}
+
+p, a{
+    margin-top: 0;
+    font-family: var(--text-2-400-700);
+    color: var(--white);
+
+}
+
+a,
+a:visited,
+a:active{
+    text-decoration: none;
+}
+
+
+
+ul{
+    list-style: none;
+    padding: 0;
+}

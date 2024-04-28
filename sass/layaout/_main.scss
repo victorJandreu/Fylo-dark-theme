@@ -1,0 +1,224 @@
+@use '../util' as u;
+
+/*
+  @include u.breakpoints(medium){
+     
+
+    }
+
+*/
+
+main{
+  
+
+  & .title,
+  & .beneficts{
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  & .title{
+    margin-top: -5rem;
+    margin-bottom: 5rem;
+    max-width: 450px;
+
+    & button{
+      width: u.rem(200);
+    }
+  }
+
+  & .beneficts {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(40);
+    max-width: 400px;
+    
+    & img{
+      width: auto;
+      margin-bottom: 1rem;
+      height: u.rem(70);
+    }
+  }
+
+  & .productive{
+    margin-block: 6rem;
+    
+    & img{
+      margin-bottom: 2.5rem;
+    }
+
+    & a{
+      display: flex;
+      align-items: end;
+      width: max-content;
+      gap: 3px;
+      font-size: .7rem;
+      color: hsl(176, 68%, 64%);
+      position: relative;
+      cursor: pointer;
+    }
+
+    & a:hover{
+      color: var(--white);
+      & svg use{
+        fill: var(--white);
+      }
+    }
+
+    & a::after{
+      content: "";
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      top: 120%;
+      background-color: hsl(176, 68%, 64%);
+    }
+
+    & a:hover::after{
+      background-color: var(--white);
+    }
+
+
+
+  }
+
+  & .comentary{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: u.rem(20);
+    width: 100%;
+    max-width: 300px;
+    margin-inline: auto;
+    position: relative;
+
+    & .quote{
+      position: absolute;
+      top: u.rem(-15);
+      width: u.rem(20);
+      left: 0;
+    }
+    
+    & > div{
+      position: relative;
+      z-index: 3;
+      background-color: var(--testimonial-bg);
+      border-radius: u.rem(5);
+      padding: 1.5rem;
+      
+      & h2{
+        font-size: .7rem;
+        line-height: 1.5;
+      }
+
+      & .comentary__flex{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: u.rem(10);
+        margin-top: 1rem;
+        
+        & p{
+          margin: 0;
+          font-size: .7rem;
+        }
+
+        & img{
+          width: 45px;
+          border-radius: 100%;
+        }
+
+        & p:first-child{
+          font-size: 1rem;
+          margin-bottom: u.rem(5);
+        }
+
+        & p:last-child{
+          opacity: .8;
+        }
+
+      }
+    }
+  }
+
+  & .early{
+    background-color: var( --intro-and-email);
+    padding: 2rem;
+    position: relative;
+    bottom: -7rem;
+    z-index: 66;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px black;
+    text-align: center;
+
+    & input,
+    & button{
+      width: 100%;
+      cursor: pointer;
+    }
+
+    & input{
+      padding-left: 2rem;
+    }
+  }
+
+  @include u.breakpoints-number(800px){
+    & .title{
+      margin-top: -25vw;
+    }
+
+    & .beneficts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 790px;
+    }
+
+    & .productive{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: u.rem(40);
+      max-width: 1050px;
+      margin-inline: auto;
+
+      & div{
+        width: 45%;
+
+        & h2{
+          font-size: 2rem;
+        }
+      }
+      & > img{
+        width: 50%;
+      }
+    }
+
+    & .comentary{
+      flex-direction: row;
+      max-width: 1050px;
+    }
+
+    & .early{
+      max-width: 800px;
+      margin-inline: auto;
+
+      & form{
+        display: flex;
+        justify-content: space-between;
+
+        & input{
+          width: 70%;
+        }
+        & button{
+          width: 28%;
+        }
+      }
+    }
+
+}
+
+
+
+
+}
+
